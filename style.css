@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  position: relative;
+}
+.clock {
+  position: relative;
+  background-color: rgb(49, 47, 47);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  color: #fff;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 10px rgb(255, 355, 255, 0.7),
+    0px 0px 0px 20px rgb(0, 0, 0, 0.7);
+  font-size: 26px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mehri {
+  position: absolute;
+  top: 80px;
+  font-size: 12px;
+  z-index: 1;
+  color: #ccc;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.clock ul li {
+  list-style: none;
+  position: absolute;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 5px;
+}
+.clock ul li span {
+  transform: rotate(calc(-30deg * var(--i)));
+  display: inline-block;
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  transform: scale(1.2);
+  border-radius: 50%;
+  z-index: 10;
+}
+.needle span {
+  width: 5px;
+  height: var(--h);
+  background-color: var(--clr);
+  position: absolute;
+  border-radius: 5px;
+  z-index: 2;
+  transition:  all 0.1s ease-in;
+}
+.needle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+ @media screen and (width <= 380px){
+  .clock{
+    width: 240px;
+    height: 240px;
+    font-size: 23px;
+  }
+  .needle span {
+    height: 75px;
+  }
+ 
+  .clock ul li {
+ 
+    inset: 7px;
+  }
+} 
